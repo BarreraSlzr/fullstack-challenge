@@ -1,0 +1,52 @@
+/* This button was copied from https: //www.mapbox.com/base/styling/buttons/ */
+.button {
+  background-color: #3887be;
+  text-align: center;
+  color: #fff;
+  display: inline-block;
+  margin: 0px;
+  padding: 10px;
+  position: relative;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-weight: 700;
+  /* Protects button metrics in .prose context */
+  font-family: 'Open Sans Bold', sans-serif;
+  line-height: 20px;
+  font-size: 12px;
+  -webkit-appearance: none;
+
+  /* The button element needs to be forced this */
+  -webkit-font-smoothing: antialiased;
+}
+.button:hover {
+  color:#fff;
+  background-color:#52a1d8;
+}
+
+.warning {
+  background-color: #cc7a65;
+}
+
+.warning:hover {
+  color:#fff;
+  background-color:#c56c55;
+}
+
+.margin-left {
+  margin-left: 45px;
+}
+
+/* I need this to add extra elements to the map :) */
+.overMap {
+  top: 10px;
+  right: 10px;
+  position: absolute;
+}
+
+.popup-button {
+  padding: 0px 10px 0px 10px;
+}

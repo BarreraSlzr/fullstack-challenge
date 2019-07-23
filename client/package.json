@@ -1,0 +1,48 @@
+{
+  "name": "live-map-fe",
+  "version": "0.1.0",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skycatch/fullstack-challenge.git"
+  },
+  "keywords": [
+    "map",
+    "live",
+    "frontend",
+    "react",
+    "mapbox"
+  ],
+  "bugs": {
+    "url": "https://github.com/skycatch/fullstack-challenge/issues"
+  },
+  "homepage": "https://github.com/skycatch/fullstack-challenge#readme",
+  "author": "Skycatch",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "mapbox-gl": "^0.48.0",
+    "moment": "^2.22.2",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-mapbox-gl": "^3.8.2",
+    "react-scripts": "1.1.5",
+    "styled-components": "^3.4.5"
+  },
+  "scripts": {
+    "start": "cross-env PORT=4041 NODE_ENV=development react-scripts start",
+    "test": "eslint . && cross-env NODE_ENV=test react-scripts test --env=jsdom",
+    "delint": "eslint --fix ."
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.6",
+    "cross-env": "^5.2.0",
+    "eslint": "^5.4.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^4.0.0",
+    "eslint-plugin-react": "^7.11.1",
+    "eslint-plugin-standard": "^3.1.0"
+  }
+}

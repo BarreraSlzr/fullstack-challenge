@@ -1,0 +1,49 @@
+{
+  "name": "@skycatch/fullstack-challenge-server",
+  "version": "1.0.0",
+  "description": "Live Map backend",
+  "main": "server.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "start": "NODE_ENV=development nodemon",
+    "test": "NODE_ENV=test mocha \"./test/**/*.test.js\" --exit",
+    "delint": "eslint --fix ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skycatch/fullstack-challenge.git"
+  },
+  "keywords": [
+    "map",
+    "live"
+  ],
+  "author": "skycatch",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/skycatch/fullstack-challenge/issues"
+  },
+  "homepage": "https://github.com/skycatch/fullstack-challenge#readme",
+  "dependencies": {
+    "async": "^2.6.1",
+    "boom": "^7.2.0",
+    "hapi": "^17.5.3",
+    "hapi-swagger": "^9.1.1",
+    "inert": "^5.1.0",
+    "lowdb": "^1.0.0",
+    "nodemon": "^1.18.4",
+    "shortid": "^2.2.14",
+    "vision": "^5.3.3"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "eslint": "^5.4.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^4.0.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "mocha": "^5.2.0"
+  }
+}
