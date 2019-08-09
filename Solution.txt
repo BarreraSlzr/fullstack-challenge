@@ -1,0 +1,2 @@
+I find one problem to start the server and i create the sidebar with the main information that api serve.
+And i wrote the styles to have a great look in the sidebar, taking care of the styles already developed to be used.
