@@ -1,7 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types';
-import moment from 'moment'
+import moment, { isMoment } from 'moment'
 import '../../css/buttons.css'
+import { locationAvailability } from '../sidebar';
 
 class PopupFormat extends React.Component {
   static propTypes = {
@@ -15,10 +16,6 @@ class PopupFormat extends React.Component {
    * @param {String} open_time location open time
    * @param {String} close_time location close time
    */
-  locationAvailability (open_time, close_time) {
-    // TODO: Create function to determine availability times
-    return true;
-  }
 
   render () {
     let { location_name, open_time, close_time } = this.props.locationValues
@@ -34,7 +31,7 @@ class PopupFormat extends React.Component {
         <div> Opens at: {open_time} </div>
         <div> Closes at: {close_time} </div>
         <div>
-          Currently: {this.locationAvailability(open_time, close_time) ? 'Open' : 'Closed'}
+          Currently: { locationAvailability(open_time, close_time)}
         </div>
       </div>
     )

@@ -7,6 +7,7 @@ import config from '../config/index'
 import axios from 'axios'
 import moment from 'moment'
 import styled from 'styled-components'
+import SidebarLocations from '../components/sidebar';
 
 const PopupStyle = styled.div`
   background: white;
@@ -18,6 +19,7 @@ const PopupStyle = styled.div`
 // this token was taken from internet :)
 const Map = ReactMapboxGl({ accessToken: 'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4M29iazA2Z2gycXA4N2pmbDZmangifQ.-g_vE53SD2WrJ6tFX7QHmA' })
 class LiveMap extends React.Component {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -27,7 +29,8 @@ class LiveMap extends React.Component {
       location: undefined,
       addLocation: {},
       isEditing: false,
-      isAddingLocation: false
+      isAddingLocation: false,
+      isHideSidebar: false
     };
   }
 
@@ -98,6 +101,10 @@ class LiveMap extends React.Component {
 
   toggleAddingLocation() {
     this.setState({ isAddingLocation: !this.state.isAddingLocation })
+  }
+
+  toggleSidebarVisibility() {
+    this.setState({ isHideSidebar: !this.state.isHideSidebar })
   }
 
   /**
@@ -199,7 +206,7 @@ class LiveMap extends React.Component {
   }
 
   render() {
-    const { center, zoom, location, isEditing, isAddingLocation } = this.state;
+    const { center, zoom, location, isEditing, isAddingLocation, isHideSidebar, locations } = this.state;
     return (
       <div>
         {isAddingLocation &&
@@ -218,11 +225,25 @@ class LiveMap extends React.Component {
           zoom={[zoom]}
           onMoveStart={this.onMapMove.bind(this)} >
           <ZoomControl position="top-left" />
-          <button
-            className='button overMap'
-            onClick={this.toggleAddingLocation.bind(this)} >
-            {isAddingLocation ? 'Close Form' :'Add Location'}
-          </button>
+          <div className='overMap overMapButtons'>
+            <button
+              className='button'
+              onClick={this.toggleAddingLocation.bind(this)} >
+              {isAddingLocation ? 'Close Form' :'Add Location'}
+            </button>
+              {
+                locations.length &&
+                <button
+                    className='button'
+                    onClick={ () => this.toggleSidebarVisibility()} >
+                    { isHideSidebar ? 'Show all locations' :'Hide all locations'} 
+                </button>
+              }
+              {
+                locations.length && !isHideSidebar && 
+                <SidebarLocations locations={ locations }/> } )
+              }
+          </div> 
           <Layer
             type="symbol"
             id="marker"

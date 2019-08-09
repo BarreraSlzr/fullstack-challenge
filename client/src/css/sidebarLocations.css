@@ -1,0 +1,42 @@
+.sidebar.Locations{
+    background: white;
+    border-radius: 10px;
+    padding: 10px;
+    max-height: 70vh;
+    overflow: auto;
+}
+.Location {
+    position: relative;
+}
+.Location > .Title > p.Open {
+    font-weight: 600;
+    color: green;
+}
+.Location > .Title > p.Closed {
+    color: red;
+}
+.Location > .Title > p {
+    margin: 0;
+    margin-left: auto;
+    padding-left: 10px; 
+    font-weight: 500;
+}
+.Location > .Title {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    font-weight: bold;
+    width: 100%;
+}
+.Location > .Info > span > p {
+    margin: 0 5px;
+    width: auto;
+}
+.Location > .Info > span {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.Location > .Info {
+    margin-left: 1vw; 
+}

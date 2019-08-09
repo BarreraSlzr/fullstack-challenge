@@ -1,0 +1,10 @@
+.overMapButtons > button {
+    margin: 1vh 0;
+    flex: 0 0 auto;
+    width: auto;
+    margin-left: auto; 
+}
+.overMapButtons {
+    display: flex;
+    flex-direction: column;    
+}
